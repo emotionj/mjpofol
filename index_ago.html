@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>김민지의 포트폴리오</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=IE8" />
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage methods demo." />
+	<meta name="keywords"  content="fullpage,jquery,methods,callbacks,demo" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+	<link rel="stylesheet" type="text/css" href="css/1.css" />
+	<link rel="stylesheet" type="text/css" href="css/go.css" />
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	
+	
+
+	<script type="text/javascript" src="jquery.fullPage.js"></script>
+	<script type="text/javascript" src="jquery.slimscroll.min.js"></script>
+	<script type="text/javascript" src="examples.js"></script>
+	<script type="text/javascript">
+	 $(document).ready(function() {
+
+	 		function initialization(){
+	 			$('#myContainer').fullpage({
+	                sectionsColor: ['none', '#4BBFC3', '#7BAABE', 'whitesmoke', '#fff'],
+	                anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+	                resize: false,
+	                animateAnchor:false,
+					scrollOverflow: true,
+					autoScrolling:true,
+					responsive: 900,
+					fitSection: false,
+					menu: '#menu',
+					navigation:true,
+					continuousVertical:true,
+					paddingTop: '0px',
+	                css3: true,
+					onLeave: function(index, nextIndex, direction){
+						console.log("onLeave--" + "index: " + index + " nextIndex: " + nextIndex + " direction: " +  direction);
+					},
+	       			afterLoad: function(anchorLink, index){
+						console.log("afterLoad--" + "anchorLink: " + anchorLink + " index: " + index );
+	       			},
+					afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
+						console.log("afterSlideLoad--" + "anchorLink: " + anchorLink + " index: " + index + " slideAnchor: " + slideAnchor + " slideIndex: " + slideIndex);
+					},
+	        		onSlideLeave: function(anchorLink, index, slideIndex, direction){
+						console.log("onSlideLeave--" + "anchorLink: " + anchorLink + " index: " + index + " slideIndex: " + slideIndex + " direction: " + direction);
+	        		},
+	        		afterRender: function(){
+						console.log("afterRender");
+	        		},
+	        		afterResize: function(){
+						console.log("afterResize");
+	        		}
+	            });
+	 		}
+
+	 		//fullPage.js initialization
+            initialization();
+
+
+			$('#moveSectionUp').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.moveSectionUp();
+			});
+
+			$('#moveSectionDown').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.moveSectionDown();
+			});
+
+			$('#moveTo').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.moveTo(2, 3);
+			});
+
+			$('#silentMoveTo').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.silentMoveTo(2);
+			});
+
+			$('#silentMoveToSlide').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.silentMoveTo(2, 3);
+			});
+
+			$('#moveSlideRight').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.moveSlideRight();
+			});
+
+			$('#moveSlideLeft').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.moveSlideLeft();
+			});
+
+			$('#setAutoScrollingFalse').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setAutoScrolling(false);
+			});
+
+			$('#setAutoScrollingTrue').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setAutoScrolling(true);
+			});
+
+			$('#setAllowScrollingFalse').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setAllowScrolling(false);
+			});
+
+			$('#setAllowScrollingTrue').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setAllowScrolling(true);
+			});
+
+			$('#setKeyboardScrollingFalse').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setKeyboardScrolling(false);
+			});
+
+			$('#setKeyboardScrollingTrue').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setKeyboardScrolling(true);
+			});
+
+			$('#setScrollingSpeed1500').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setScrollingSpeed(2500);
+			});
+
+			$('#setScrollingSpeed700').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setScrollingSpeed(700);
+			});
+
+			$('#destroy').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.destroy('all');
+			});
+
+			$('#undestroy').click(function(e){
+				e.preventDefault();
+
+				//fullPage.js initialization
+				initialization();
+			});
+
+			$('#reBuild').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.reBuild();
+			});
+
+			$('#setLockAnchorsTrue').click(function(e){
+				e.preventDefault;
+				$.fn.fullpage.setLockAnchors(true);
+			});
+
+			$('#setLockAnchorsFalse').click(function(e){
+				e.preventDefault;
+				$.fn.fullpage.setLockAnchors(false);
+			});
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript" src="http://mjpofol.com/box/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+	<script type="text/javascript" src="http://mjpofol.com/box/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://mjpofol.com/box/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+ 	<link rel="stylesheet" href="style.css" />
+	<script type="text/javascript">
+		$(document).ready(function() {
+	
+			$("#various1").fancybox({
+				'titlePosition'		: 'inside',
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none'
+			});
+
+			$("#various3").fancybox({
+				'width'				: '50%',
+				'height'			: '50%',
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			});
+            
+            $("#various5").fancybox({
+				'width'				: '70%',
+				'height'			: '70%',
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			});
+
+
+
+		});
+		
+		
+		$(function(){
+			$("#section0").click(function(){
+				$(this).css("background-image","url('http://mjpofol.com/img/b1-o.jpg')")
+				
+				})
+			
+			});
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body style="width:100%;height:100%;">
+
+    <ul id="menu" style="border:0px solid #000;">
+        <li class="menu_li under"><a href="#firstPage" class="active" style="padding:20px;">It's me</a></li>
+        <li class="menu_li under"><a href="#secondPage" class="active" style="padding:20px;">portpolio</a></li>
+        <li class="menu_li under"><a href="#3rdPage" class="active" style="padding:20px;">resume</a></li>
+
+    </ul>
+
+
+
+<div id="myContainer">
+
+
+<!--1번-->
+	
+    <div class="section" id="section0" ></div>
+
+
+
+
+<!--2번-->
+
+
+	<div class="section" id="section1">
+
+		<div class="box">
+        <ul>
+			<li style="position:relative">
+            <img src="http://mjpofol.com/img/bbluna.jpg">
+            
+            	<ul class="img_under">
+                    <li><a href="http://www.bbluna.com" target="_blank">PC</a></li>
+                    <li><a href="http://m.bbluna.com" target="_blank">mobile</a></li>                
+                </ul>
+            
+            </li>
+			<li><a href="http://mjpofol.com/my/index.html"><img src="http://mjpofol.com/img/my.jpg"></a></li>
+            
+ 			<li style="position:relative">
+            <img src="http://mjpofol.com/img/mom.jpg">
+            
+            	<ul class="img_under">
+                    <li><a href="http://momjori.co.kr/" target="_blank">PC</a></li>
+                    <li><a href="http://m.momjori.co.kr/" target="_blank">mobile</a></li>                
+                </ul>      
+            
+            </li>           
+
+ 			<li style="position:relative">
+            <img src="http://mjpofol.com/img/baro.jpg">
+            
+            	<ul class="img_under">
+                    <li><a href="http://baromoro.com/" target="_blank">PC</a></li>
+                    <li><a href="http://m.baromoro.com/" target="_blank">mobile</a></li>                
+                </ul>      
+            
+            </li>      
+			
+ 			<li style="position:relative">
+            <img src="http://mjpofol.com/img/hcode.jpg">
+            
+            	<ul class="img_under">
+					<li></li>
+                    <li><a href="http://www.thehrdertest.com/h-code/html/main/" target="_blank">PC</a></li>              
+                </ul>      
+            
+            </li>  
+			
+ 			<li style="position:relative">
+            <img src="http://mjpofol.com/img/sk.jpg">
+            
+            	<ul class="img_under">
+                    <li><a href="https://www.skcarrental.com/rent/index_intro.do" target="_blank">PC</a></li>
+                    <li><a href="https://m.skcarrental.com/mobile/index.do" target="_blank">mobile</a></li>              
+                </ul>      
+            
+            </li>  			
+
+
+		</ul>
+    	</div>	
+		
+
+	</div>
+
+
+
+
+<!--3번-->
+
+	<div class="section" id="section2">
+	  <div class="last_ment" style="width:100%;height:400px">
+			<div class="ment1">
+            	<h2>변화,</h2>
+            	<div class="mentline">
+                	저는 토목공학과를 나온 공대생입니다.                    
+                    삽을 들고 현장을 나가야할 것 같은 공대생이 무슨 디자인을 하겠다고 
+                    의아해하실 분들이 많다고 생각합니다.
+                    하지만, 누구나 그렇듯 어렸을때의 꿈을 마음속깊숙히 가지고 있다고생각합니다. 
+                    어렸을 때 부터 디자인에 관심이 많아 배우기도 했었고, 혼자서 이것저것 검색하고
+                    책을 사서 공부하면서 포토샵을 차근차근 해내었습니다.
+                    상상 하는 것을 좋아했던 저는 친 오빠의 영향으로 웹디자인이라는 직업에 대해
+                    관심이 생겼습니다. 더불어 컴퓨터 프로그램에 관심이 많은 저는 프로그램을
+                    사용하여 웹을 제작하는  웹퍼블리셔라는 직업에도 관심이 생겼습니다. 
+                    웹퍼블리셔라는 직업에 더욱 흥미를 가지게 된 이유는 레이아웃 작업부터 시작해서
+                    모든 것을 설계 및 계획하여 만드는 작업방식에 굉장한 흥미를 느꼈기 때문입니다.
+                    처음에는 막연히 홈페이지를 만들고 싶다는 마음으로 취업을 하였지만, 지금은
+                    제 손으로 직접 리뉴얼 및 제작 된 홈페이지를 보고있으면 성취감은 물론 
+                    이 세상에서 잘 살아가고 있구나 라는 생각과 함께 제 자신의 가치가 조금씩은
+                    올라가고 있음을 느끼게 해주는 순간입니다. 
+                    어려운 난관에 부딪혔을 때 포기하지 않고 제 자신이 알고 있는 지식을 통해서 
+                    여러 번 시도 끝에 문제를 해결하는 부분에서 또한 성취감을 느꼈습니다.
+
+                </div>
+            </div>
+			<div class="ment2">
+            	<h2>성격,</h2>            	
+            	<div class="mentline">
+                    저의 무기는 이러한 끈기, 꼼꼼한 그리고 리더쉽입니다. 
+                    무엇을 계획할 때, 가령 여행을 계획할 때 저는 주로 리더를 맡습니다.
+                    전체적인 일정을 짜는 것을 도우며, 검색 및 정보파악을 하여 정리하는
+                    일과 함께 제일 중요한 총무역할을 맡습니다.
+                    이렇게 거의 모든 계획에 참여하는 이유는 저의 꼼꼼함 때문입니다. 
+                    어떠한 일을 시작하기 전에 충분한 사전조사가 필요하다고 생각합니다.
+                    사전조사가 이뤄지지 않았을 경우에 갑작스런 사고가 생기게 되면 발 빠른 대처가
+                    힘들다고 느끼기 때문입니다. 충분한 정보파악과 검토가 이뤄진 후에야 저는
+                    마음 편하게 업무를 수행할 수 있습니다.
+                    세심함과 꼼꼼함이 지나쳐 선택이 늦어지면 프로젝트가 길어지는 것은 물론 
+                    빠르게 처리해야하는 일에 방해가 될 수도 있습니다.
+                    하지만 제가 지니고 있는 눈치와 센스로 상황에 따른 작업속도를 맞출 수 있도록 하여
+                    해결해 나갈 자신이 있습니다.
+                </div>
+            </div>
+			<div class="ment3">
+            	<h2>꿈과 열정,</h2>
+            	<div class="mentline">
+                    저는 눈치가 빠릅니다.
+                    많은 일들을 해왔지만,
+                    매번 저를 고용했던 사람들이 저를 다시 찾지 않은 적이 없었습니다. 
+                    이건 제 자신의 자부심이자 자신감입니다.
+                    최근에 다녔던 회사에서 일할 당시 필기를 바탕으로 꼼꼼하게 재확인을 하여
+                    수정 및 보완을 하는 업무에서 정확하고 신속하게 업무처리를 하였습니다. 
+                    기본에 충실하고 물 흐르듯이 자연스러운 웹퍼블리셔로 성장해나갈 것입니다.
+                    학원을 통해 경험한 지식을 기반으로 전체적인 툴을 사용하여 빠르게 업무를
+                    수행 할 수 있었기에 어렵지 않게 업무에 적응할 수 있었습니다.
+                    창의적이며 융통성 있는 인재로 인정받겠습니다.
+                    귀사에 입사 후 업무파악을 재빠르게 하여 도움을 주고, 발전을 할 수 있는 
+                    능력을 키우겠습니다. 회의에서도 제 목소리를 낼 수 있으며, 여러의견을 제시하는
+                    사람입니다. 저는 웹퍼블리셔라는 직업을 통해 I T강국인 대한민국의 자부심을 가지고
+                    귀사와 함께 해외 진출하는 것이 저의 꿈이자 앞으로 해내야할 목표입니다.
+                    같이 성장 할 수 있게 제가 귀사의 힘이 되겠습니다.
+                    귀사의 길을 걷고싶습니다.
+                    함께 꽃길 걸어주시겠습니까?
+                
+                </div>
+            </div>
+		</div>
+        
+        <p><a href="http://mjpofol.com/mj.pdf" target="_blank">더 자세한 이력서를 보시려면 클릭해주세요.</a></p>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
