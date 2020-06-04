@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>김민지의 포트폴리오</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=IE8" />
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage methods demo." />
+	<meta name="keywords"  content="fullpage,jquery,methods,callbacks,demo" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+	<link rel="stylesheet" type="text/css" href="css/1.css" />
+	<link rel="stylesheet" type="text/css" href="css/go.css" />
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	
+	
+
+	<script type="text/javascript" src="jquery.fullPage.js"></script>
+	<script type="text/javascript" src="jquery.slimscroll.min.js"></script>
+	<script type="text/javascript" src="examples.js"></script>
+	<script type="text/javascript">
+	 $(document).ready(function() {
+
+	 		function initialization(){
+	 			$('#myContainer').fullpage({
+	                sectionsColor: ['none', '#4BBFC3', '#7BAABE', 'whitesmoke', '#fff'],
+	                anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+	                resize: false,
+	                animateAnchor:false,
+					scrollOverflow: true,
+					autoScrolling:true,
+					responsive: 900,
+					fitSection: false,
+					menu: '#menu',
+					navigation:true,
+					continuousVertical:true,
+					paddingTop: '0px',
+	                css3: true,
+					onLeave: function(index, nextIndex, direction){
+						console.log("onLeave--" + "index: " + index + " nextIndex: " + nextIndex + " direction: " +  direction);
+					},
+	       			afterLoad: function(anchorLink, index){
+						console.log("afterLoad--" + "anchorLink: " + anchorLink + " index: " + index );
+	       			},
+					afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
+						console.log("afterSlideLoad--" + "anchorLink: " + anchorLink + " index: " + index + " slideAnchor: " + slideAnchor + " slideIndex: " + slideIndex);
+					},
+	        		onSlideLeave: function(anchorLink, index, slideIndex, direction){
+						console.log("onSlideLeave--" + "anchorLink: " + anchorLink + " index: " + index + " slideIndex: " + slideIndex + " direction: " + direction);
+	        		},
+	        		afterRender: function(){
+						console.log("afterRender");
+	        		},
+	        		afterResize: function(){
+						console.log("afterResize");
+	        		}
+	            });
+	 		}
+
+	 		//fullPage.js initialization
+            initialization();
+
+
+			$('#moveSectionUp').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.moveSectionUp();
+			});
+
+			$('#moveSectionDown').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.moveSectionDown();
+			});
+
+			$('#moveTo').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.moveTo(2, 3);
+			});
+
+			$('#silentMoveTo').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.silentMoveTo(2);
+			});
+
+			$('#silentMoveToSlide').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.silentMoveTo(2, 3);
+			});
+
+			$('#moveSlideRight').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.moveSlideRight();
+			});
+
+			$('#moveSlideLeft').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.moveSlideLeft();
+			});
+
+			$('#setAutoScrollingFalse').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setAutoScrolling(false);
+			});
+
+			$('#setAutoScrollingTrue').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setAutoScrolling(true);
+			});
+
+			$('#setAllowScrollingFalse').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setAllowScrolling(false);
+			});
+
+			$('#setAllowScrollingTrue').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setAllowScrolling(true);
+			});
+
+			$('#setKeyboardScrollingFalse').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setKeyboardScrolling(false);
+			});
+
+			$('#setKeyboardScrollingTrue').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setKeyboardScrolling(true);
+			});
+
+			$('#setScrollingSpeed1500').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setScrollingSpeed(2500);
+			});
+
+			$('#setScrollingSpeed700').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setScrollingSpeed(700);
+			});
+
+			$('#destroy').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.destroy('all');
+			});
+
+			$('#undestroy').click(function(e){
+				e.preventDefault();
+
+				//fullPage.js initialization
+				initialization();
+			});
+
+			$('#reBuild').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.reBuild();
+			});
+
+			$('#setLockAnchorsTrue').click(function(e){
+				e.preventDefault;
+				$.fn.fullpage.setLockAnchors(true);
+			});
+
+			$('#setLockAnchorsFalse').click(function(e){
+				e.preventDefault;
+				$.fn.fullpage.setLockAnchors(false);
+			});
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript" src="http://mjpofol.com/box/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+	<script type="text/javascript" src="http://mjpofol.com/box/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://mjpofol.com/box/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+ 	<link rel="stylesheet" href="style.css" />
+	<script type="text/javascript">
+		$(document).ready(function() {
+	
+			$("#various1").fancybox({
+				'titlePosition'		: 'inside',
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none'
+			});
+
+			$("#various3").fancybox({
+				'width'				: '50%',
+				'height'			: '50%',
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			});
+            
+            $("#various5").fancybox({
+				'width'				: '70%',
+				'height'			: '70%',
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			});
+
+
+
+		});
+		
+		
+		$(function(){
+			$("#section0").click(function(){
+				$(this).css("background-image","url('http://mjpofol.com/img/b1-o.jpg')")
+				
+				})
+			
+			});
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+    <ul id="menu" style="border:0px solid #000;">
+        <li class="menu_li under">
+        	<a href="#firstPage" class="active">It's me</a>
+        </li>
+        <li class="menu_li under">
+        	<a href="#secondPage" class="active">portpolio</a>
+        </li>
+    </ul>
+
+
+
+<div id="myContainer">
+
+<!--1번-->
+	<div class="section" id="section0" ></div>
+
+<!--2번-->
+	<div class="section" id="section1">
+		<div class="box">
+        <ul>            
+ 			<li class="rel">
+            <img src="http://mjpofol.com/img/mom.jpg">
+            	<ul class="img_under">
+                    <li><a href="http://momjori.co.kr/" target="_blank">PC</a></li>
+                    <li><a href="http://m.momjori.co.kr/" target="_blank">mobile</a></li>                
+                </ul>      
+            
+            </li>           
+
+ 			<li class="rel">
+            <img src="http://mjpofol.com/img/baro.jpg">            
+            	<ul class="img_under">
+                    <li><a href="http://baromoro.com/" target="_blank">PC</a></li>
+                    <li><a href="http://m.baromoro.com/" target="_blank">mobile</a></li>                
+                </ul>      
+            </li>      
+			
+ 			<li class="rel">
+            <img src="http://mjpofol.com/img/hcode.jpg">            
+            	<ul class="img_under">
+					<li></li>
+                    <li><a href="http://www.thehrdertest.com/" target="_blank">PC</a></li>              
+                </ul>
+            </li>  
+			
+ 			<li class="rel">
+            <img src="http://mjpofol.com/img/sk.jpg">
+            	<ul class="img_under">
+                    <li><a href="https://www.skcarrental.com/rent/index_intro.do" target="_blank">PC</a></li>
+                    <li><a href="https://m.skcarrental.com/mobile/index.do" target="_blank">mobile</a></li>              
+                </ul>      
+            </li>  	
+		</ul>
+    	</div>	
+	</div>
+
+</body>
+</html>
